@@ -16,6 +16,6 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
-list_mac = mac.split(':')
-result = bin(int((list_mac[0] + list_mac[1] + list_mac[2]), 16))
-print (result[2:])
+
+bin_mac = "{:b}".format(int(mac.replace(":", ""), 16))
+print(bin_mac)

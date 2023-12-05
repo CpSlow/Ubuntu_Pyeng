@@ -22,9 +22,9 @@
 
 command1 = "switchport trunk allowed vlan 1,2,3,5,8"
 command2 = "switchport trunk allowed vlan 1,3,8,9"
-split_command1 = set(command1.split()[-1].split(','))
-split_command2 = set(command2.split()[-1].split(','))
-result = sorted(split_command1.intersection(split_command2))
+
+vlans1 = command1.split()[-1].split(",")
+vlans2 = command2.split()[-1].split(",")
+
+result = sorted(set(vlans1) & set(vlans2))
 print(result)
-
-
