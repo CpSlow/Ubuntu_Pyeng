@@ -30,3 +30,25 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip_add_with_mask = input("Введите подсеть в формате ip/mask: " )
+ip_add = ip_add_with_mask.split('/')[0]
+mask = int(ip_add_with_mask.split('/')[1])
+ip_add_list = ip_add.split('.')
+mask_binary = "1" * mask + "0" * (32 - int(mask))
+
+
+ip_template = '''
+Network:
+{0:<8} {1:<8} {2:<8} {3:<8}
+{0:08b} {1:08b} {2:08b} {3:08b}
+'''
+
+mask_template = '''
+Mask:
+/{0}
+{1:<8} {2:<8} {3:<8} {4:<8}
+{1:08b} {2:08b} {3:08b} {4:08b}
+'''
+
+print(ip_template.format(int(ip_add_list[0]), int(ip_add_list[1]), int(ip_add_list[2]), int(ip_add_list[3])))
+print(mask_template.format(mask, int(mask_binary[0:8], 2), int(mask_binary[8:16], 2), int(mask_binary[16:24], 2), int(mask_binary[24:32], 2)))
