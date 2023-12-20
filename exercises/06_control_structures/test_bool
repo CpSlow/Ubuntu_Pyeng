@@ -1,0 +1,5 @@
+ip_address = input('Введите IP-адреса в формате 10.0.1.1: ')
+
+result = (ip_address.split(".")[0].isdigit() and ip_address.split(".")[1].isdigit() and ip_address.split(".")[2].isdigit() and ip_address.split(".")[3].isdigit()) == False
+
+print(result)
