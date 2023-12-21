@@ -1,0 +1,5 @@
+line = "duplex auto"
+ignore = ["duplex", "alias", "configuration"]
+
+list_line = line.split()
+print(ignore[0] in list_line)

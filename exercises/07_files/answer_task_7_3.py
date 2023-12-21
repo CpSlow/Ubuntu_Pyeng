@@ -20,12 +20,10 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
-test = []
 
-with open('CAM_table.txt') as file:
-    for line in file:
-        line_list = line.split()
-        if ((len(line_list) > 0) and (line_list[0].isdigit())):
-            test = [test] + [line_list[0], line_list[1], line_list[3]]
-
-print(type(test[0]))
+with open("CAM_table.txt") as conf:
+    for line in conf:
+        words = line.split()
+        if words and words[0].isdigit():
+            vlan, mac, _, interface = words
+            print(words)
